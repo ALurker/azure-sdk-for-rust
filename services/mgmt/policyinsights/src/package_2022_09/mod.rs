@@ -5643,6 +5643,7 @@ pub mod policy_states {
                                         .append_pair(azure_core::query_param::API_VERSION, "2019-10-01");
                                 }
                                 let req_body = azure_core::EMPTY_BODY;
+                                req.insert_header(azure_core::headers::CONTENT_LENGTH, "0");
                                 req.set_body(req_body);
                                 this.client.send(&mut req).await?
                             }
