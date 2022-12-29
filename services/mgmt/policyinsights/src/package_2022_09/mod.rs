@@ -404,6 +404,7 @@ pub mod policy_tracked_resources {
                                         .append_pair(azure_core::query_param::API_VERSION, "2018-07-01-preview");
                                 }
                                 let req_body = azure_core::EMPTY_BODY;
+                                req.insert_header(azure_core::headers::CONTENT_LENGTH, "0");
                                 req.set_body(req_body);
                                 this.client.send(&mut req).await?
                             }
